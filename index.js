@@ -40,6 +40,6 @@ app.delete('/', async (req,res) => {
 
 // Put (Like a delete the like a post)
 app.put('/', async (req, res) => {
-  products.findOneAndUpdate(req.query, {$set: req.body})
+  await products.findOneAndUpdate(req.query, {$set: req.body})
   res.json('Item was updated with special field')
 })
